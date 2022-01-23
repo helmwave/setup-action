@@ -1,0 +1,22 @@
+{
+  "name": "setup-helmwave-action",
+  "version": "0.1.0",
+  "description": "Setup helmwave",
+  "author": "Dmitrii Zhiliaev",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@actions/exec": "^1.1.0",
+    "@actions/io": "^1.1.1",
+    "@actions/tool-cache": "^1.7.1"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.10",
+    "typescript": "^4.5.5"
+  },
+  "scripts": {
+    "build": "tsc index.ts",
+    "start": "node index.js"
+  }
+}
