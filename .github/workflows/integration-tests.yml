@@ -1,0 +1,16 @@
+name: Tests
+on:
+  push:
+    paths:
+      - src/**
+      - .github/workflows/**
+      - action.yml
+
+jobs:
+  helm:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Install helmwave
+        uses: helmwave/setup-action@v0.1.0
+      - run: helmwave --version
+     
