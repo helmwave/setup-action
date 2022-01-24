@@ -10,7 +10,7 @@ jobs:
   external:
     runs-on: ubuntu-latest
     steps:
-      - uses: helmwave/setup-action@v0.1.1
+      - uses: helmwave/setup-action@v0.1.2
         name: Install helmwave
         with:
           version: '0.17.1'
