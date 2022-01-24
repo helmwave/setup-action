@@ -2,7 +2,7 @@ name: Tests
 on:
   push:
     paths:
-      - src/**
+      - index.*
       - .github/workflows/**
       - action.yml
 
