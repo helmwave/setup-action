@@ -10,10 +10,8 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     steps:
-      - run: npm install
       - uses: actions/checkout@v2
-      - run: |
-          npm install
+      - run: npm install
       - uses: ./
         name: Install helmwave
         with:
