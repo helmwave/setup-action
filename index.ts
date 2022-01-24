@@ -14,6 +14,10 @@ export async function run() {
     let cachedPath = await download(version)
     console.log(`Helmwave tool version: '${version}' has been cached at ${cachedPath}`)
     core.setOutput('path', cachedPath)
+
+    if (!process.env['PATH'].startsWith(path.dirname(cachedPath))) {
+        core.addPath(path.dirname(cachedPath))
+    }
 }
 
 export function getURL(version: string): string {
