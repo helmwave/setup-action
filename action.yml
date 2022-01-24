@@ -1,5 +1,5 @@
-name: 'Helmwave tool installer'
-description: 'Install a specific version of helmwave binary. Acceptable values are latest or any semantic version string like 1.15.0'
+name: 'Helmwave installer'
+description: 'Install a specific version of helmwave binary.'
 inputs:
   version:
     description: 'Version of helmwave'
@@ -10,6 +10,5 @@ outputs:
 branding:
   color: 'blue'
 runs:
-  using: 'node12'
+  using: node16
   main: 'index.js'
- 
