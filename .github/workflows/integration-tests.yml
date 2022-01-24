@@ -7,7 +7,16 @@ on:
       - action.yml
 
 jobs:
-  tests:
+  external:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: helmwave/setup-action@v0.1.1
+        name: Install helmwave
+        with:
+          version: '0.17.1'
+      - run: helmwave --version
+  
+  internal:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
