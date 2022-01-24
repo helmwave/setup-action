@@ -11,7 +11,7 @@ const toolName = 'helmwave'
 
 export async function run() {
     let version = core.getInput('version', { 'required': true })
-    let cachedPath = download(version)
+    let cachedPath = await download(version)
     console.log(`Helmwave tool version: '${version}' has been cached at ${cachedPath}`)
     core.setOutput('path', cachedPath)
 }

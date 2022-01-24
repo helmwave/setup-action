@@ -48,11 +48,16 @@ function run() {
     return __awaiter(this, void 0, void 0, function () {
         var version, cachedPath;
         return __generator(this, function (_a) {
-            version = core.getInput('version', { 'required': true });
-            cachedPath = download(version);
-            console.log("Helmwave tool version: '".concat(version, "' has been cached at ").concat(cachedPath));
-            core.setOutput('path', cachedPath);
-            return [2 /*return*/];
+            switch (_a.label) {
+                case 0:
+                    version = core.getInput('version', { 'required': true });
+                    return [4 /*yield*/, download(version)];
+                case 1:
+                    cachedPath = _a.sent();
+                    console.log("Helmwave tool version: '".concat(version, "' has been cached at ").concat(cachedPath));
+                    core.setOutput('path', cachedPath);
+                    return [2 /*return*/];
+            }
         });
     });
 }
