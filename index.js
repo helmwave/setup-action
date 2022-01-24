@@ -56,6 +56,9 @@ function run() {
                     cachedPath = _a.sent();
                     console.log("Helmwave tool version: '".concat(version, "' has been cached at ").concat(cachedPath));
                     core.setOutput('path', cachedPath);
+                    if (!process.env['PATH'].startsWith(path.dirname(cachedPath))) {
+                        core.addPath(path.dirname(cachedPath));
+                    }
                     return [2 /*return*/];
             }
         });

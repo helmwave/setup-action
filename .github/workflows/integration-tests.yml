@@ -16,7 +16,7 @@ jobs:
         name: Install helmwave
         with:
           version: '0.17.1'
+        id: install
+      - run: ${{ steps.install.outputs.path }} --version
       - run: helmwave --version
 
-
-     
