@@ -11,7 +11,7 @@ Install a specific version of helmwave binary on the runner.
 
 ## Example
 
-```
+```yaml
 name: CI
 on:
   push:
