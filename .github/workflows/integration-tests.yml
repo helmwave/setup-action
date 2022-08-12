@@ -6,7 +6,7 @@ jobs:
   external:
     runs-on: ubuntu-latest
     steps:
-      - uses: helmwave/setup-action@${{ github.event.after }}
+      - uses: helmwave/setup-action@main
         name: Install helmwave
         with:
           version: '0.20.3'
