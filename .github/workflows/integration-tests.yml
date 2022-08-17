@@ -1,33 +1,32 @@
 name: Tests
 on:
-  push:
-    paths:
-      - index.*
-      - .github/workflows/**
-      - action.yml
-
+  - push
 
 jobs:
   external:
     runs-on: ubuntu-latest
     steps:
-      - uses: helmwave/setup-action@v0.2.0
+      - uses: helmwave/setup-action@main
         name: Install helmwave
         with:
-          version: '0.17.1'
+          version: '0.20.3'
+
       - run: helmwave --version
-      
-      
+
   internal:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+
       - run: npm install
+
       - uses: ./
         name: Install helmwave
         with:
-          version: '0.17.1'
+          version: '0.20.3'
         id: install
+
       - run: ${{ steps.install.outputs.path }} --version
+
       - run: helmwave --version
 
