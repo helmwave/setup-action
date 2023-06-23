@@ -21,16 +21,17 @@ export async function run() {
 }
 
 export function getURL(version: string): string {
+    const arch = os.arch()
     switch (os.type()) {
         case 'Linux':
-            return util.format('https://github.com/helmwave/helmwave/releases/download/v%s/helmwave_%s_linux_amd64.tar.gz', version, version)
+            return util.format('https://github.com/helmwave/helmwave/releases/download/v%s/helmwave_%s_linux_%s.tar.gz', version, version, arch)
 
         case 'Darwin':
-            return util.format('https://github.com/helmwave/helmwave/releases/download/v%s/helmwave_%s_darwin_amd64.tar.gz', version, version)
+            return util.format('https://github.com/helmwave/helmwave/releases/download/v%s/helmwave_%s_darwin_%s.tar.gz', version, version, arch)
 
         case 'Windows_NT':
         default:
-            return util.format('https://github.com/helmwave/helmwave/releases/download/v%s/helmwave_%s_windows_amd64.zip', version, version)
+            return util.format('https://github.com/helmwave/helmwave/releases/download/v%s/helmwave_%s_windows_%s.zip', version, version, arch)
     }
 }
 
