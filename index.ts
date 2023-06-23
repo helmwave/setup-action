@@ -25,7 +25,7 @@ export function getURL(version: string): string {
     const arch = os.arch()
     switch (os.type()) {
         case 'Linux':
-            return util.format('/v%s/helmwave_%s_linux_%s.tar.gz',downloadUrl, version, version, arch)
+            return util.format('%s/v%s/helmwave_%s_linux_%s.tar.gz',downloadUrl, version, version, arch)
 
         case 'Darwin':
             return util.format('%s/v%s/helmwave_%s_darwin_%s.tar.gz',downloadUrl, version, version, arch)
