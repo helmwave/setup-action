@@ -7,6 +7,7 @@ import * as core from '@actions/core'
 import * as cache from '@actions/tool-cache'
 
 const toolName = 'helmwave'
+const downloadUrl = 'https://github.com/helmwave/helmwave/releases/download'
 
 
 export async function run() {
@@ -24,14 +25,14 @@ export function getURL(version: string): string {
     const arch = os.arch()
     switch (os.type()) {
         case 'Linux':
-            return util.format('https://github.com/helmwave/helmwave/releases/download/v%s/helmwave_%s_linux_%s.tar.gz', version, version, arch)
+            return util.format('/v%s/helmwave_%s_linux_%s.tar.gz',downloadUrl, version, version, arch)
 
         case 'Darwin':
-            return util.format('https://github.com/helmwave/helmwave/releases/download/v%s/helmwave_%s_darwin_%s.tar.gz', version, version, arch)
+            return util.format('%s/v%s/helmwave_%s_darwin_%s.tar.gz',downloadUrl, version, version, arch)
 
         case 'Windows_NT':
         default:
-            return util.format('https://github.com/helmwave/helmwave/releases/download/v%s/helmwave_%s_windows_%s.zip', version, version, arch)
+            return util.format('%s/v%s/helmwave_%s_windows_%s.zip', downloadUrl, version, version, arch)
     }
 }
 
