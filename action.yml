@@ -9,6 +9,7 @@ outputs:
     description: 'Path to the cached helmwave binary'
 branding:
   color: 'blue'
+  icon: 'package'
 runs:
   using: node16
   main: 'dist/index.js'
