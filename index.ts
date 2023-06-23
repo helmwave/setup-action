@@ -22,7 +22,7 @@ export async function run() {
 }
 
 export function getURL(version: string): string {
-    const arch = os.arch()
+    const arch = os.arch() == 'x64' ? 'amd64' : os.arch()
     switch (os.type()) {
         case 'Linux':
             return util.format('%s/v%s/helmwave_%s_linux_%s.tar.gz',downloadUrl, version, version, arch)
